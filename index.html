@@ -2,34 +2,45 @@
 <html ng-app="angBookmark">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Bookmarks</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.js"></script>
   <script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
   <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
+<header class="header">
+  <h1 class="main-header">Make A Bookmark</h1>
+  <ul class="header-subnav">
+    <li><a href="#/bookmarks">Bookmarks</a></li>
+    <li><a href="#/tagslist">Tags</a></li>
+    <a target="_blank" href="https://twitter.com/damonkala" class="icon-button twitter">
+      <i class="fi-social-twitter"></i><span></span>
+    </a>
+    <a target="_blank" href="https://www.facebook.com/sugaray32" class="icon-button facebook">
+      <i class="fi-social-facebook"></i><span></span>
+    </a>
+    <a target="_blank" href="https://myaccount.google.com/?utm_source=OGB&pli=1" class="icon-button gplus">
+      <i class="fi-social-google-plus"></i><span></span>
+    </a>
+  </ul>
+</header>
 <body ng-controller="bookmarkController">
   <div class="container">
-    <h1>Make a bookmark</h1>
     <div id="bookmark-form" class="row">
       <form class="form-group" name="add">
         <input type="text" class="input-lg" ng-model="formData.name" required placeholder="Bookmark">
         <input type="url" class="input-lg" ng-model="formData.url" required placeholder="http://">
-        <input type="text" class="input-lg" ng-model="formData.tags" required placeholder="Tags">
+        <input type="text" class="input-lg" ng-model="formData.tags" required placeholder="Tags (Separate By ,)">
         <button type="submit" ng-click="createBookmark()" ng-disabled="add.$invalid" class="btn btn-info btn-lg">Add</button>
       </form>
     </div>
     <form class="form-group">
       <input type="text" ng-model="bookmarks.search" class="search-query searchbox" id="bookmarks_search" placeholder="search">
-      <input type="text" class="input-lg" ng-model="tagData.name" required placeholder="Tag">
+      <input type="text" class="input-lg" ng-model="tagData.name" required placeholder="Tags (Separate With Commas)">
      <button type="submit" ng-click="createTag()" ng-disabled="make.$invalid" class="btn btn-info btn-lg">Add</button>
     </form>
-  <ul class="nav navbar nav-pills nav-justified">
-    <li><a href="#/bookmarks">Bookmarks</a></li>
-    <li><a href="#/tagslist">Tags</a></li>
-  </ul>
-
 
     <div class="row">
       <div ui-view></div>
