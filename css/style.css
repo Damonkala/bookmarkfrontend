@@ -33,7 +33,7 @@ td {
 
 .header {
   text-align: center;
-  background: url("https://s3.amazonaws.com/wp-ag/wp-content/uploads/sites/72/2015/03/clintonpantsuits2.gif") no-repeat bottom center;
+  /*background: url("https://s3.amazonaws.com/wp-ag/wp-content/uploads/sites/72/2015/03/clintonpantsuits2.gif") no-repeat bottom center;*/
   background-size: cover;
   padding: 14rem;
   color: #fff;

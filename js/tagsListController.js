@@ -3,7 +3,7 @@ var angBookmark = angular.module('angBookmark')
 
 angBookmark.controller("TagsListCtrl", function($scope, $http, $stateParams) {
   console.log("TagCtrl Loaded")
-  $http.get('http://localhost:3000/tags')
+  $http.get('https://blooming-tundra-5710.herokuapp.com/tags')
       .success(function(data){
         $scope.tag = data;
         console.log("TAG RESPONSE:", data);

@@ -5,7 +5,7 @@ function bookmarkController($scope, $http) {
 
 
 
-	$http.get('http://localhost:3000/bookmarks')
+	$http.get('https://blooming-tundra-5710.herokuapp.com/bookmarks')
 			.success(function(data){
 				$scope.bookmarks = data;
 				console.log(data);
@@ -13,7 +13,7 @@ function bookmarkController($scope, $http) {
 			.error(function(data) {
 				console.error('Error: ' + data);
 			});
-	$http.get('http://localhost:3000/tags')
+	$http.get('https://blooming-tundra-5710.herokuapp.com/tags')
 			.success(function(data){
 				$scope.tags = data;
 				console.log(data);
@@ -23,7 +23,7 @@ function bookmarkController($scope, $http) {
 			});
 
 			$scope.createBookmark = function() {
-				$http.post('http://localhost:3000/bookmarks', $scope.formData)
+				$http.post('https://blooming-tundra-5710.herokuapp.com/bookmarks', $scope.formData)
 						.success(function(data) {
 							$scope.formData = {};
 							$scope.bookmarks = data;
@@ -35,7 +35,7 @@ function bookmarkController($scope, $http) {
 						location.reload();
 			};
 			$scope.createTag = function() {
-				$http.post('http://localhost:3000/tags', $scope.tagData)
+				$http.post('https://blooming-tundra-5710.herokuapp.com/tags', $scope.tagData)
 						.success(function(data) {
 							$scope.tagData = {};
 							$scope.tags = data;
@@ -47,7 +47,7 @@ function bookmarkController($scope, $http) {
 			};
 
 			$scope.deleteBookmark = function(id) {
-				$http.delete('http://localhost:3000/bookmarks/' + id)
+				$http.delete('https://blooming-tundra-5710.herokuapp.com/bookmarks/' + id)
 						.success(function(data) {
 							$scope.bookmarks = data;
 							console.log(data);
@@ -57,7 +57,7 @@ function bookmarkController($scope, $http) {
 						})
 			}
 			$scope.deleteTag = function(id) {
-				$http.delete('http://localhost:3000/tags/' + id)
+				$http.delete('https://blooming-tundra-5710.herokuapp.com/tags/' + id)
 						.success(function(data) {
 							$scope.tags = data;
 							console.log(data);
