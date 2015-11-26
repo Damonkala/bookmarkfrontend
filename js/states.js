@@ -12,8 +12,8 @@ angBookmark.config(function($stateProvider, $urlRouterProvider){
   })
   .state('tagslist', {
     url: "/tagslist",
-    templateUrl: "../partials/tagsList.html",
-    controller: "TagsListCtrl"
+    templateUrl: "../partials/tagsList.html"
+    // controller: "TagsListCtrl"
   })
   // .state('tag', {
   //   url: "/tag/:id",
