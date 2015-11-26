@@ -1,20 +1,10 @@
-<!-- <div class="row">
-	<h1>Bookmarks List</h1>
-		<div id="bookmark-list" class="row">
-			<div class="col-sm-4 col-sm-offset-4">
-				<div ng-repeat="bookmark in bookmarks| orderBy:'-bookmark.timestamp'">
-						{{bookmark.name}}
-					<a href={{bookmark.url}}>
-						{{bookmark.url}}
-				</a>
-						<a ui-sref="tag({name: bookmark.tags})">{{bookmark.tags}}</a>
-			</div>
-		</div>
-	</div>
-</div> -->
-
 <div class="row">
 	<h2>Bookmarks List</h2>
+		<!-- <form class="form-group">
+			<input type="text" ng-model="bookmarks.search" class="search-query searchbox" id="bookmarks_search" placeholder="search">
+			<input type="text" class="input-lg" ng-model="tagData.name" required placeholder="Tag">
+ 		 <button type="submit" ng-click="createTag()" ng-disabled="make.$invalid" class="btn btn-info btn-lg">Add</button>
+		</form> -->
 	<table class="table table-hover">
 		<thead>
 		<tr>
@@ -25,11 +15,15 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr ng-repeat="bookmark in bookmarks| orderBy:'-bookmark.timestamp'">
+		<tr ng-repeat="bookmark in bookmarks| filter: bookmarks.search |orderBy:'-bookmark.timestamp'">
 			<td> {{bookmark.name}} </td>
 			<td><a href={{bookmark.url}}>{{bookmark.url}}</a></td>
-			<td><a ui-sref="tag({name: bookmark.tags})">{{bookmark.tags}}</a></td>
-			<td><a href=""><i class="fa fa-trash-o"></i></a></td>
+			<td>
+				<div ng-repeat="bookmarktag in bookmark.tags">
+					<a ui-sref="tag({name: bookmark.tags[$index]})">{{bookmark.tags[$index]}}</a>
+				</div>
+			</td>
+			<td><a ng-click="deleteBookmark(bookmark._id)"><i class="fa fa-trash-o"></i></a></td>
 		</tr>
 		</tbody>
 	</table>

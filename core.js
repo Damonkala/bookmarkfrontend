@@ -32,12 +32,34 @@ function bookmarkController($scope, $http) {
 						.error(function(data){
 							console.log('Error: ' + data);
 						});
+						location.reload();
+			};
+			$scope.createTag = function() {
+				$http.post('http://localhost:3000/tags', $scope.tagData)
+						.success(function(data) {
+							$scope.tagData = {};
+							$scope.tags = data;
+							console.log(data);
+						})
+						.error(function(data){
+							console.log('Error: ' + data);
+						});
 			};
 
-			$scope.deleteBookmark = function(name) {
-				$http.delete('http://localhost:3000//bookmarks' + name)
+			$scope.deleteBookmark = function(id) {
+				$http.delete('http://localhost:3000/bookmarks/' + id)
 						.success(function(data) {
 							$scope.bookmarks = data;
+							console.log(data);
+						})
+						.error(function(data) {
+							console.log('Error: ' + data);
+						})
+			}
+			$scope.deleteTag = function(id) {
+				$http.delete('http://localhost:3000/tags/' + id)
+						.success(function(data) {
+							$scope.tags = data;
 							console.log(data);
 						})
 						.error(function(data) {

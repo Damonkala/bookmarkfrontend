@@ -11,7 +11,7 @@
 </head>
 <body ng-controller="bookmarkController">
   <div class="container">
-    <h1> Your bookmarks</h1>
+    <h1>Make a bookmark</h1>
     <div id="bookmark-form" class="row">
       <form class="form-group" name="add">
         <input type="text" class="input-lg" ng-model="formData.name" required placeholder="Bookmark">
@@ -20,6 +20,11 @@
         <button type="submit" ng-click="createBookmark()" ng-disabled="add.$invalid" class="btn btn-info btn-lg">Add</button>
       </form>
     </div>
+    <form class="form-group">
+      <input type="text" ng-model="bookmarks.search" class="search-query searchbox" id="bookmarks_search" placeholder="search">
+      <input type="text" class="input-lg" ng-model="tagData.name" required placeholder="Tag">
+     <button type="submit" ng-click="createTag()" ng-disabled="make.$invalid" class="btn btn-info btn-lg">Add</button>
+    </form>
   <ul class="nav navbar nav-pills nav-justified">
     <li><a href="#/bookmarks">Bookmarks</a></li>
     <li><a href="#/tagslist">Tags</a></li>
@@ -35,6 +40,7 @@
   <script src="core.js"></script>
   <script src="js/states.js"></script>
   <script src="js/tagController.js"></script>
+  <script src="js/tagslistController.js"></script>
   <script src="js/bookmarkController.js"></script>
 </body>
 </html>

@@ -1,16 +1,8 @@
-<!-- <h1>
-	{{tag.name}}
-</h1> -->
-<!-- <div ng-repeat="tag in tags">
-		<div>{{tag.name}}</div>
-</div> -->
-<h1>
-	{{tag.name}}
-</h1>
 
 <!-- <li ng-repeat="bookmark in bookmarks">
 	{{bookmark.name}}
 </li> -->
+<h1>{{tag.name}} </h1>
 <div class="row">
 	<table class="table table-hover">
 		<thead>
@@ -24,8 +16,14 @@
 		<tbody>
 		<tr ng-repeat="bookmark in bookmarks| orderBy:'-bookmark.timestamp'">
 			<td> {{bookmark.name}} </td>
-			<td><a href={{bookmark.url}}>{{bookmark.url}}</a></td>
-			<td><a ui-sref="tag({name: bookmark.tags})">{{bookmark.tags}}</a></td>
+			<td>
+				<a href={{bookmark.url}}>{{bookmark.url}}</a>
+			</td>
+			<td>
+				<div ng-repeat="bookmarktag in bookmark.tags">
+					<a ui-sref="tag({name: bookmark.tags[$index]})">{{bookmark.tags[$index]}}</a>
+				</div>
+			</td>
 			<td><a href=""><i class="fa fa-trash-o"></i></a></td>
 		</tr>
 		</tbody>

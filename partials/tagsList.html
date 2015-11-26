@@ -20,9 +20,9 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr ng-repeat="tag in tags">
+		<tr ng-repeat="tag in tags | filter: bookmarks.search">
 			<td><a ui-sref="tag({name: tag.name})">{{tag.name}}</a></td>
-			<td><a href=""><i class="fa fa-trash-o"></i></a></td>
+			<td><a ng-click="deleteTag(tag._id)"><i class="fa fa-trash-o"></i></a></td>
 		</tr>
 		</tbody>
 	</table>
