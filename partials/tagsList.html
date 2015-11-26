@@ -1,0 +1,29 @@
+<!-- <div class="row">
+	<h1>Tags List</h1>
+		<div id="tag-list" class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+				<div ng-repeat="tag in tags">
+						<a ui-sref="tag({name: tag.name})">{{tag.name}}</a>
+				</a>
+			</div>
+		</div>
+	</div>
+</div> -->
+
+<div class="row">
+	<h2>Tags List</h2>
+	<table class="table table-hover">
+		<thead>
+		<tr>
+			<th>Tags</th>
+			<th><a href="#"><i class="fa fa-pencil-square-o"></i></a></th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="tag in tags">
+			<td><a ui-sref="tag({name: tag.name})">{{tag.name}}</a></td>
+			<td><a href=""><i class="fa fa-trash-o"></i></a></td>
+		</tr>
+		</tbody>
+	</table>
+</div>
