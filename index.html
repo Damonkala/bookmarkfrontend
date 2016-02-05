@@ -13,9 +13,9 @@
 <header class="header">
   <h1 class="main-header">Make A Bookmark</h1>
   <!-- <ul class="header-subnav">
-    <li><a href="#/bookmarks">Bookmarks</a></li>
-    <li><a href="#/tagslist">Tags</a></li>
-  </ul> -->
+  <li><a href="#/bookmarks">Bookmarks</a></li>
+  <li><a href="#/tagslist">Tags</a></li>
+</ul> -->
 </header>
 <body ng-controller="bookmarkController">
   <div class="container">
@@ -30,7 +30,7 @@
     <form class="form-group">
       <input type="text" ng-model="bookmarks.search" class="search-query searchbox" id="bookmarks_search" placeholder="search">
       <input type="text" class="input-lg" ng-model="tagData.name" required placeholder="Tags (Separate With Commas)">
-     <button type="submit" ng-click="createTag()" ng-disabled="make.$invalid" class="btn btn-info btn-lg">Add</button>
+      <button type="submit" ng-click="createTag()" ng-disabled="make.$invalid" class="btn btn-info btn-lg">Add</button>
     </form>
     <ul class="header-subnav">
       <li><a href="#/bookmarks">Bookmarks</a></li>
@@ -40,15 +40,6 @@
     <div class="row">
       <div ui-view></div>
     </div>
-    <a target="_blank" href="https://twitter.com/damonkala" class="icon-button twitter">
-      <i class="fi-social-twitter"></i><span></span>
-    </a>
-    <a target="_blank" href="https://www.facebook.com/sugaray32" class="icon-button facebook">
-      <i class="fi-social-facebook"></i><span></span>
-    </a>
-    <a target="_blank" href="https://myaccount.google.com/?utm_source=OGB&pli=1" class="icon-button gplus">
-      <i class="fi-social-google-plus"></i><span></span>
-    </a>
   </div>
   <script src="vendor/jquery/dist/jquery.min.js"></script>
   <script src="core.js"></script>
