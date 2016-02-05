@@ -1,4 +1,4 @@
-Frontend Deployment: angular-based-bookmarking-tool.sh
+Deployment: https://angular-bookmarks.surge.sh
 
 Backend Deployment: https://blooming-tundra-5710.herokuapp.com
 
